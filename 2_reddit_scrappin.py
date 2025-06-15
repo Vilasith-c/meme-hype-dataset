@@ -12,9 +12,9 @@ subreddit = reddit.subreddit('wallstreetbets')
 try:
     with open('memes.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['Title','          Upvotes','          Comments','          Created Time', '          URL','          Post ID','          Created UTC','          Author','          Flair','          Upvote Ratio','          Views','          Crossposts','          Permalink','          In self post','          Is video','          Is Image','          self text'])
+        writer.writerow(['Title','Upvotes','Comments','Created Time', 'URL','Post ID','Created UTC','Author','Flair','Upvote Ratio','          Views','          Crossposts','          Permalink','          In self post','          Is video','          Is Image','          self text'])
 
-        for post in subreddit.top(limit=100):
+        for post in subreddit.top(limit=10000):
             writer.writerow([
                 post.title,
                 post.score,
